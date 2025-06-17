@@ -1,0 +1,15 @@
+services:
+    telegraf_metrics.client:
+        class: InfluxDB2\Client
+        arguments:
+            - '%telegraf_metrics.client%'
+        public: false
+
+    telegraf_metrics.collector:
+        class: Yakovlef\TelegrafMetricsBundle\Collector\MetricsCollector
+        arguments:
+            - '@telegraf_metrics.client'
+            - '%telegraf_metrics.namespace%'
+        public: true
+
+    Yakovlef\TelegrafMetricsBundle\Collector\MetricsCollectorInterface: '@telegraf_metrics.collector'

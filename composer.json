@@ -1,0 +1,35 @@
+{
+  "name": "yakovlef/telegraf-metrics-bundle",
+  "type": "symfony-bundle",
+  "description": "Symfony bundle for collecting and sending metrics to Telegraf/InfluxDB via UDP protocol",
+  "keywords": ["symfony", "telegraf", "influxdb", "metrics", "monitoring"],
+  "homepage": "https://github.com/yakovlef/telegraf-metrics-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vladimir Yakovlev",
+      "email": "novator.dev@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "symfony/config": "^6.4|^7.0",
+    "symfony/dependency-injection": "^6.4|^7.0",
+    "symfony/http-kernel": "^6.4|^7.0",
+    "influxdata/influxdb-client-php": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yakovlef\\TelegrafMetricsBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Yakovlef\\TelegrafMetricsBundle\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable"
+}
